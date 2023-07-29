@@ -1,6 +1,11 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+run-name: ${{ github.actor }} have new skills in MlOps
+on: 
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '**.py'
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
