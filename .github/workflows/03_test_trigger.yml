@@ -2,15 +2,14 @@ name: Code default
 
 on:
     pull_request:
-      types:
-        - opened
+      types: [opened, reopened]
       branches:
-        - 'main/**'
+        - 'main'
 
 jobs:
-    initial:
+    test-action:
         runs-on: ubuntu-latest
         steps:
         - name: Placeholder
           run: |
-            echo "Will add code checks here in next challenge"
+            echo "The pull request action triggered successful"
