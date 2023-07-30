@@ -7,9 +7,9 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: azureml:diabetes-dev-folder:1.0
+    path: azureml:diabetes-prod-folder:1.0
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute: azureml:mlops-practice
 experiment_name: MlopsExperiment
-description: Training on dev dataset
+description: Training on prod dataset
