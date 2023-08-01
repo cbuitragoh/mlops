@@ -1,4 +1,4 @@
-name: Training on datasets
+name: Deployment model
 
 on:
    workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Create endpoint
-          run: az ml online-endpoint create --name mlflow-endpoint -f src/create_endpoint.yml --stream
+          run: az ml online-endpoint create --file src/create_endpoint.yml --resource-group mlops_practice --workspace-name mlops_practice --stream
     job2:
         name: Deploy Model
         runs-on: ubuntu-latest
@@ -34,4 +34,4 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Deploy Model
-          run: az ml online-deployment create --name mlflow-deployment --endpoint mlflow-endpoint -f src/deploy_model.yaml --all-traffic
+          run: az ml online-deployment create -file src/deploy_model.yaml --resource-group mlops_practice --workspace-name mlops_practice --all-traffic
