@@ -34,4 +34,4 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Deploy Model
-          run: az ml online-deployment create -file src/deploy_model.yaml --resource-group mlops_practice --workspace-name mlops_practice --all-traffic
+          run: az ml online-deployment create --file src/deploy_model.yml --resource-group mlops_practice --workspace-name mlops_practice --all-traffic
