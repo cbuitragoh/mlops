@@ -1,8 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: mlflow-deployment
+description: Online endpoint for inferences
 endpoint_name: mlflow-endpoint
-model:
-  name: classification_practice
-  version: 1
-instance_type: Standard_F2s_v2
+model: azureml:classification_practice:1
+instance_type: Standard_E2s_v3
 instance_count: 1

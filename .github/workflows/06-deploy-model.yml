@@ -18,7 +18,7 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Create endpoint
-          run: az ml online-endpoint create --file src/create_endpoint.yml --resource-group mlops_practice --workspace-name mlops_practice --stream
+          run: az ml online-endpoint create --file src/create_endpoint.yml --resource-group mlops_practice --workspace-name mlops_practice
     job2:
         name: Deploy Model
         runs-on: ubuntu-latest
@@ -34,4 +34,4 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Deploy Model
-          run: az ml online-deployment create -file src/deploy_model.yaml --resource-group mlops_practice --workspace-name mlops_practice --all-traffic
+          run: az ml online-deployment create --file src/deploy_model.yml --resource-group mlops_practice --workspace-name mlops_practice --all-traffic
