@@ -19,7 +19,7 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Training
-          run: az ml job create --file src/job.yml --resource-group mlops_demo --workspace-name mlops_demo --stream
+          run: az ml job create --file src/job.yml --resource-group mlops-demo --workspace-name mlops-demo --stream
     job2:
         name: production
         runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
           with:
             creds: ${{secrets.AZURE_CREDENTIALS}}
         - name: Training
-          run: az ml job create --file src/job_prod.yml --resource-group mlops_demo --workspace-name mlops_demo  --stream
+          run: az ml job create --file src/job_prod.yml --resource-group mlops-demo --workspace-name mlops-demo  --stream
